@@ -1,0 +1,19 @@
+<div>
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+  <h2>
+    1) Scegli un disco dall'elenco
+  </h2>
+  <!--Questo codice serve a generare una comb box. selectedOption contiene il titolo della canzone
+  selezionata poichè in [value] abbiamo scelto di usare il titolo dell'album -->
+  <select [(ngModel)]="selectedOption"  (change)="onChange()">
+    <option [value]="album.title" *ngFor="let album of albums"> {{album.title}}</option>
+  </select> <br>
+
+  <!--Questo codice stampa il titolo dell'album selezionato
+  Serve solo a scopo di debug, puoi eliminarlo dall'applicazione finale-->
+  {{selectedOption}}
+
+  <hr>
